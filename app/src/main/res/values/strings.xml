@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Plant</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_login">Login</string>
+    <string name="title_password">Password</string>
+    <string name="title_email">Email</string>
+    <string name="dec_login">Silahkan login dengan akun anda</string>
+    <string name="dec_belum_punya_akun">Belum punya akun?</string>
+    <string name="title_register">Register</string>
+    <string name="dec_register">Daftar untuk mendapatkan akses lebih banyak</string>
+    <string name="title_fullname">Fullname</string>
+    <string name="dec_sudah_punya_akun">Sudah punya akun?</string>
+</resources>
