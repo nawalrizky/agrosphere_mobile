@@ -1,4 +1,4 @@
-package com.olivia.plant.data.db.model.image
+package com.olivia.plant.data.db.model.response.image
 
 import com.google.gson.annotations.SerializedName
 
