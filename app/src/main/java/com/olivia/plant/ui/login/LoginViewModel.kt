@@ -2,6 +2,7 @@ package com.olivia.plant.ui.login
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.olivia.plant.data.db.model.request.login.DataParamLogin
 import com.olivia.plant.data.network.ApiEndpoint
 import com.oratakashi.viewbinding.core.binding.livedata.liveData
 import com.zero.zerobase.data.state.DevState
@@ -16,6 +17,6 @@ class LoginViewModel(
     val stateLogin: MutableLiveData<DevStateDynamic> by liveData()
 
     fun postLogin(username: String, password: String) {
-        endpoint.login(username, password).observeDynamic(stateLogin)
+        endpoint.login(DataParamLogin(username, password)).observeDynamic(stateLogin)
     }
 }

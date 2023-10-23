@@ -11,4 +11,12 @@
     <string name="dec_register">Daftar untuk mendapatkan akses lebih banyak</string>
     <string name="title_fullname">Fullname</string>
     <string name="dec_sudah_punya_akun">Sudah punya akun?</string>
+    <string name="title_username">Username</string>
+    <string name="title_day">Selamat Malam</string>
+    <string name="title_null">Null</string>
+    <string name="title_total_deteksi_today">Total Deteksi Hari Ini</string>
+    <string name="title_zero">0</string>
+    <string name="title_first_name">First Name</string>
+    <string name="title_last_name">Last Name</string>
+    <string name="title_hasil_deteksi">Hasil Deteksi</string>
 </resources>

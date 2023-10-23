@@ -2,16 +2,18 @@ package com.olivia.plant.data.db.session
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.olivia.plant.data.db.model.user.DataUser
+import com.olivia.plant.data.db.model.response.user.DataUser
 
 class Sessions(context: Context) {
     companion object {
         const val PREF_NAME = "com.olivia.plant.session"
 
         const val ID: String = "ID"
-        const val FULLNAME: String = "fullname"
+        const val FIRTSNAME: String = "FIRTSNAME"
+        const val LASTNAME: String = "LASTNAME"
         const val USERNAME: String = "username"
         const val EMAIL: String = "email"
+        const val ACCESSTOKEN: String = "access_token"
     }
 
     private val pref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
@@ -22,7 +24,7 @@ class Sessions(context: Context) {
     }
 
     fun isLogin(): Boolean {
-        return getData(FULLNAME) != ""
+        return getInt(ID) != 0
     }
 
     fun putData(key: String, value: String) {
@@ -54,8 +56,10 @@ class Sessions(context: Context) {
 
     fun doLogin(dataUser: DataUser) {
         putData(ID, dataUser.id)
-        putData(FULLNAME, dataUser.name)
+        putData(FIRTSNAME, dataUser.firstName)
+        putData(LASTNAME, dataUser.lastName)
         putData(USERNAME, dataUser.username)
         putData(EMAIL, dataUser.email)
+        putData(ACCESSTOKEN, dataUser.accessToken)
     }
 }

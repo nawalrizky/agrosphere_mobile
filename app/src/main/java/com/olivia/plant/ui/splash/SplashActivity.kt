@@ -23,6 +23,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
             } else {
                 startActivity(LoginActivity::class.java)
             }
+            finish()
         }, 2000L)
     }
 }

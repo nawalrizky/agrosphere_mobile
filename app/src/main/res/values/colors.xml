@@ -11,5 +11,6 @@
 
     <color name="text_color_secondary">#757575</color>
     <color name="text_color_tertiary">#BDBDBD</color>
+    <color name="text_color_link">#0094F6</color>
 
 </resources>

@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="390dp"
+        android:layout_height="280dp"
         android:scaleType="centerCrop"
         android:src="@drawable/bg_screen"
         app:layout_constraintTop_toTopOf="parent" />
@@ -88,10 +88,41 @@
                 app:boxStrokeWidth="2dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etFullname"
+                    android:id="@+id/etFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/title_fullname"
+                    android:hint="@string/title_first_name"
+                    android:maxLines="1"
+                    tools:ignore="UnusedAttribute" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/title_last_name"
+                    android:maxLines="1"
+                    tools:ignore="UnusedAttribute" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:boxStrokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/title_username"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     tools:ignore="UnusedAttribute" />

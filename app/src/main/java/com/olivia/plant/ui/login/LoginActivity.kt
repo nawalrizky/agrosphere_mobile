@@ -1,7 +1,7 @@
 package com.olivia.plant.ui.login
 
 import android.util.Log
-import com.olivia.plant.data.db.model.user.DataUser
+import com.olivia.plant.data.db.model.response.user.DataUser
 import com.olivia.plant.databinding.ActivityLoginBinding
 import com.olivia.plant.root.App
 import com.olivia.plant.ui.main.MainActivity

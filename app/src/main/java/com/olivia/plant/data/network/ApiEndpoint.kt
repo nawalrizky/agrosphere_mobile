@@ -1,12 +1,13 @@
 package com.olivia.plant.data.network
 
-import com.olivia.plant.data.db.model.image.ResponseImage
-import com.olivia.plant.data.db.model.user.DataUser
+import com.olivia.plant.data.db.model.request.detect.DataParamDetect
+import com.olivia.plant.data.db.model.request.login.DataParamLogin
+import com.olivia.plant.data.db.model.request.register.DataParamRegister
+import com.olivia.plant.data.db.model.response.detection.DataDetection
+import com.olivia.plant.data.db.model.response.user.DataUser
 import com.olivia.plant.data.network.state.DevResponseBase
-import com.zero.zerobase.data.model.DevResponse
 import io.reactivex.Single
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
+import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface ApiEndpoint {
@@ -14,19 +15,21 @@ interface ApiEndpoint {
     /**
      * Login User
      */
-    @FormUrlEncoded
-    @POST("mobilelogin")
+    @POST("login/")
     fun login(
-        @Field("email") email: String,
-        @Field("password") password: String,
+        @Body requestModel: DataParamLogin
     ): Single<DevResponseBase<DataUser>>
 
-    @FormUrlEncoded
-    @POST("data")
-    fun postImage(
-        @Field("plant_img") plant_img: String,
-        @Field("plant_name") plant_name: String,
-        @Field("condition") condition: String,
-        @Field("disease") disease: String,
-    ): Single<ResponseImage>
+    /**
+     * Register
+     */
+    @POST("register/")
+    fun register(
+        @Body requestModel: DataParamRegister
+    ): Single<DevResponseBase<Any>>
+
+    @POST("plants/detect")
+    fun detectLeaf(
+        @Body requestModel: DataParamDetect
+    ): Single<DevResponseBase<DataDetection>>
 }

@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.pm.ApplicationInfo
 import android.os.Build
+import androidx.appcompat.app.AppCompatDelegate
 import com.olivia.plant.data.db.session.Sessions
 import com.olivia.plant.di.module.networkModule
 import com.olivia.plant.di.module.viewModelModule
@@ -30,6 +32,8 @@ class App : Application() {
                 )
             )
         }
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         createNotificationChannel()
 

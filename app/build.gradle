@@ -20,7 +20,7 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField 'String', 'BASE_URL', "\"http://10.0.2.2:8000/api/\""
+            buildConfigField 'String', 'BASE_URL', "\"http://192.168.18.139:8000/api/v1/\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -112,4 +112,7 @@ dependencies {
 
     //Dialog
     implementation 'com.github.d-max:spots-dialog:0.7@aar'
+
+    // Compress Image
+    implementation 'com.github.Shouheng88:compressor:1.6.0'
 }
