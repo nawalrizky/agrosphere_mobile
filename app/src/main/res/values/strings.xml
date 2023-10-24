@@ -19,4 +19,5 @@
     <string name="title_first_name">First Name</string>
     <string name="title_last_name">Last Name</string>
     <string name="title_hasil_deteksi">Hasil Deteksi</string>
+    <string name="title_monitoring">Monitoring</string>
 </resources>

@@ -5,6 +5,7 @@ import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.olivia.plant.data.network.ApiEndpoint
 import com.olivia.plant.BuildConfig
+import com.olivia.plant.data.network.EspEndpoint
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.qualifier.named
@@ -18,8 +19,8 @@ val networkModule = module {
     single { provideOkHttpClient(get()) }
     single { provideRetrofit(get(), BuildConfig.BASE_URL) }
     single { provideApiService(get()) }
-    single(named("html")) { provideRetrofitHtml(get(), BuildConfig.BASE_URL) }
-    single(named("service_html")) { provideApiServiceHtml(get(named("html"))) }
+    single(named("esp")) { provideRetrofitEsp(get(), "http://192.168.18.205/") }
+    single(named("service_esp")) { provideEspService(get(named("esp"))) }
 }
 
 private fun provideOkHttpClient(context: Context): OkHttpClient {
@@ -53,7 +54,7 @@ private fun provideRetrofit(
         .client(okHttpClient)
         .build()
 
-private fun provideRetrofitHtml(
+private fun provideRetrofitEsp(
     okHttpClient: OkHttpClient,
     BASE_URL: String
 ): Retrofit =
@@ -67,5 +68,5 @@ private fun provideRetrofitHtml(
 private fun provideApiService(retrofit: Retrofit): ApiEndpoint =
     retrofit.create(ApiEndpoint::class.java)
 
-private fun provideApiServiceHtml(retrofit: Retrofit): ApiEndpoint =
-    retrofit.create(ApiEndpoint::class.java)
+private fun provideEspService(retrofit: Retrofit): EspEndpoint =
+    retrofit.create(EspEndpoint::class.java)
