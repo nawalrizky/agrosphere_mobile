@@ -7,6 +7,10 @@ import android.os.Parcelable
 
 @Parcelize
 data class DataDetection(
-    @SerializedName("leafs")
-    val dataLeaves: List<DataLeaf>
+    @SerializedName("created_at")
+    val createdAt: String,
+    @SerializedName("leafs_disease")
+    val dataLeafsDisease: List<DataLeafsDisease>,
+    @SerializedName("all_recomendations")
+    val dataAllRecomendations: List<DataAllRecomendation>
 ) : Parcelable

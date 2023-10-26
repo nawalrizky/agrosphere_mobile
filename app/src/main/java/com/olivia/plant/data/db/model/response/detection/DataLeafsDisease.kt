@@ -6,9 +6,13 @@ import kotlinx.parcelize.Parcelize
 import android.os.Parcelable
 
 @Parcelize
-data class DataLeaf(
+data class DataLeafsDisease(
+    @SerializedName("created_at")
+    val createdAt: String,
     @SerializedName("condition")
     val condition: String,
-    @SerializedName("image_64")
-    val image64: String
+    @SerializedName("image_uri")
+    val imageUri: String,
+    @SerializedName("recomendation")
+    val dataRecomendation: DataRecomendation
 ) : Parcelable
