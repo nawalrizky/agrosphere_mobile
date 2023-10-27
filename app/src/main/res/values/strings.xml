@@ -23,4 +23,6 @@
     <string name="title_tanggal">Tanggal</string>
     <string name="title_gejala">Gejala</string>
     <string name="title_rekomendasi">Rekomendasi</string>
+    <string name="default_notification_channel_id">1001</string>
+    <string name="notification_channel_name">Plant Detection</string>
 </resources>

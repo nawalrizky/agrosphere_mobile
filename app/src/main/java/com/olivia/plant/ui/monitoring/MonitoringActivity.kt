@@ -76,6 +76,10 @@ class MonitoringActivity : BaseActivity<ActivityMonitoringBinding>() {
                 }
             }
 
+            btnScan.onClick {
+
+            }
+
         }
 
 

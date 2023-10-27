@@ -93,6 +93,17 @@
             android:backgroundTint="@color/white"
             android:gravity="center" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnScan"
+            android:layout_width="125dp"
+            android:layout_height="65dp"
+            android:layout_margin="@dimen/dp_10"
+            android:hint="SCAN"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/white"
+            android:gravity="center" />
+
+
 
     </LinearLayout>
 

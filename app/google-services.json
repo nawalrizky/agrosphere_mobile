@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "622812341595",
+    "project_id": "agroshere",
+    "storage_bucket": "agroshere.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622812341595:android:ceafe199142c56d1efa67e",
+        "android_client_info": {
+          "package_name": "com.olivia.plant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7gxylB8gytCb8QuU2PABv6-ZNR_SAWfw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

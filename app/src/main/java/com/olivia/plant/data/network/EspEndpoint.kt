@@ -18,6 +18,7 @@ interface EspEndpoint {
         STOP("stop"),
         ON_LAMP("on_lamp"),
         OFF_LAMP("off_lamp"),
+        DETECT("detect"),
     }
 
     @GET("action")

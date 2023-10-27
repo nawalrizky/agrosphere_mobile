@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -59,6 +60,8 @@ dependencies {
     implementation 'androidx.activity:activity-ktx:1.8.0'
     implementation 'androidx.fragment:fragment-ktx:1.4.0'
 
+    implementation platform('com.google.firebase:firebase-bom:32.4.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     //Base Project
     implementation 'com.github.akbarabdul80:DevBase-Android:1.0.9-beta'
@@ -69,6 +72,9 @@ dependencies {
     //View Binding
     implementation 'com.oratakashi:AndroidViewBinding:3.1'
 
+    // Firebase Messaging
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-messaging-directboot:23.2.1'
 
     //Library Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
