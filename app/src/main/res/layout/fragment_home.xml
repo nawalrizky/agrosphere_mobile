@@ -47,6 +47,7 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/btnNotification"
             android:layout_width="45dp"
             android:layout_height="35dp"
             android:contentDescription="@string/title_null"
