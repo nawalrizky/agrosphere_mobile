@@ -12,5 +12,10 @@
     <color name="text_color_secondary">#757575</color>
     <color name="text_color_tertiary">#BDBDBD</color>
     <color name="text_color_link">#0094F6</color>
+    <color name="bg_color">#F1FFF3</color>
+    <color name="bg_text_card">#3F7762</color>
+    <color name="bg_text_danger">#6B6425</color>
+    <color name="bg_card">#C1F3C8</color>
+    <color name="bg_warning">#FFD600</color>
 
 </resources>

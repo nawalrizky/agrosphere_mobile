@@ -10,7 +10,5 @@ data class DataDetection(
     @SerializedName("created_at")
     val createdAt: String,
     @SerializedName("leafs_disease")
-    val dataLeafsDisease: List<DataLeafsDisease>,
-    @SerializedName("all_recomendations")
-    val dataAllRecomendations: List<DataAllRecomendation>
+    val dataLeafsDisease: List<DataLeafsDisease>
 ) : Parcelable

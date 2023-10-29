@@ -9,10 +9,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:contentPaddingBottom="@dimen/dp_10"
         app:cardCornerRadius="@dimen/dp_10"
+        app:cardElevation="5dp"
         app:cardUseCompatPadding="true"
-        app:cardElevation="5dp">
+        app:contentPaddingBottom="@dimen/dp_10">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,19 +53,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="140dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/image_test"
-                        />
+                        android:src="@drawable/image_test" />
 
                 </com.jcminarro.roundkornerlayout.RoundKornerFrameLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/semibold"
-                    android:textColor="@color/text_color"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="@font/semibold"
                     android:includeFontPadding="false"
                     android:text="@string/title_gejala"
+                    android:textColor="@color/text_color"
                     android:textSize="14sp" />
 
 
@@ -73,31 +72,30 @@
                     android:id="@+id/tvGejala"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/regular"
-                    android:layout_marginTop="3dp"
-                    android:includeFontPadding="false"
                     android:layout_marginStart="5dp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/regular"
+                    android:includeFontPadding="false"
                     android:text=" - Bintik - Bintik"
                     android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/semibold"
-                    android:textColor="@color/text_color"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/semibold"
                     android:includeFontPadding="false"
                     android:text="@string/title_rekomendasi"
+                    android:textColor="@color/text_color"
                     android:textSize="14sp" />
-
 
                 <TextView
                     android:id="@+id/tvRekomendasi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/regular"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="3dp"
+                    android:fontFamily="@font/regular"
                     android:includeFontPadding="false"
                     android:text="Detail Rekomendasi"
                     android:textSize="12sp" />

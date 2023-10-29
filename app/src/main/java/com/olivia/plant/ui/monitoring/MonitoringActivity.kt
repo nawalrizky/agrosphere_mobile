@@ -77,7 +77,11 @@ class MonitoringActivity : BaseActivity<ActivityMonitoringBinding>() {
             }
 
             btnScan.onClick {
+                viewModel.postAction(EspEndpoint.ESPACTION.DETECT)
+            }
 
+            btnBack.onClick {
+                finish()
             }
 
         }

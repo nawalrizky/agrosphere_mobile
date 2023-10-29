@@ -9,7 +9,7 @@ import com.olivia.plant.data.db.model.response.detection.DataLeafsDisease
 import com.olivia.plant.databinding.ItemDetectionBinding
 import com.oratakashi.viewbinding.core.tools.onClick
 
-class ResultDetectionAdapter(
+class ResultDetectionAdapter (
     private val onClick: (DataLeafsDisease) -> Unit,
 ) : BaseQuickAdapter<DataLeafsDisease, BaseDataBindingHolder<ItemDetectionBinding>>(
     R.layout.item_detection
