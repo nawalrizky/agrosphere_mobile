@@ -30,4 +30,8 @@
     <string name="title_kontrol_organik">Kontrol Organik</string>
     <string name="title_data_kosong">Data Kosong</string>
     <string name="title_history_scan">History Scan</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_edit_profile">"Edit Profile "</string>
+    <string name="title_ganti_kata_sandi">Ganti Kata Sandi</string>
+    <string name="title_sign_out">Keluar</string>
 </resources>

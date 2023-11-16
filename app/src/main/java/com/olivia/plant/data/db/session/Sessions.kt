@@ -62,4 +62,8 @@ class Sessions(context: Context) {
         putData(EMAIL, dataUser.email)
         putData(ACCESSTOKEN, dataUser.accessToken)
     }
+
+    fun doLogout() {
+        pref.edit().clear().apply()
+    }
 }
