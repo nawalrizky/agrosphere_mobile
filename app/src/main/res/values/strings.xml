@@ -28,4 +28,6 @@
     <string name="title_notifikasi">Notifikasi</string>
     <string name="title_detail_deteksi">Detail Deteksi</string>
     <string name="title_kontrol_organik">Kontrol Organik</string>
+    <string name="title_data_kosong">Data Kosong</string>
+    <string name="title_history_scan">History Scan</string>
 </resources>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_color">
@@ -80,8 +79,6 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular"
                             android:text="Diagnosis : "
-                            android:textSize="14sp"
-                            android:includeFontPadding="false"
                             android:textColor="@color/bg_text_card" />
 
                         <TextView
@@ -91,7 +88,7 @@
                             android:fontFamily="@font/semibold"
                             android:text="Strawberry Scroach"
                             android:textColor="@color/bg_text_card"
-                            android:textSize="16sp" />
+                            android:textSize="18sp" />
 
 
                         <com.jcminarro.roundkornerlayout.RoundKornerFrameLayout
@@ -101,9 +98,8 @@
                             app:corner_radius="@dimen/dp_10">
 
                             <ImageView
-                                android:id="@+id/ivDetection"
                                 android:layout_width="match_parent"
-                                android:layout_height="180dp"
+                                android:layout_height="200dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/image_test" />
 
@@ -191,7 +187,6 @@
                     android:textSize="12sp" />
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cvKontolKimia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"

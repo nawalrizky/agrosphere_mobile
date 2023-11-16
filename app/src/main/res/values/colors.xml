@@ -17,5 +17,6 @@
     <color name="bg_text_danger">#6B6425</color>
     <color name="bg_card">#C1F3C8</color>
     <color name="bg_warning">#FFD600</color>
+    <color name="gray">#8F8F8F</color>
 
 </resources>

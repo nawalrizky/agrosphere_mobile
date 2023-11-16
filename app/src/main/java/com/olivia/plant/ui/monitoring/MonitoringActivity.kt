@@ -24,7 +24,7 @@ class MonitoringActivity : BaseActivity<ActivityMonitoringBinding>() {
             webView.webViewClient = WebViewClient()
             webView.settings.useWideViewPort = true
             webView.settings.loadWithOverviewMode = true
-            webView.loadUrl("http://192.168.18.205:81/stream")
+            webView.loadUrl("http://192.168.6.232:81/stream")
         }
 
     }

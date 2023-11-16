@@ -1,9 +1,11 @@
 package com.olivia.plant.data.network
 
 import com.olivia.plant.data.db.model.request.detect.DataParamDetect
+import com.olivia.plant.data.db.model.request.history.DataParamHistory
 import com.olivia.plant.data.db.model.request.login.DataParamLogin
 import com.olivia.plant.data.db.model.request.register.DataParamRegister
 import com.olivia.plant.data.db.model.response.detection.DataDetection
+import com.olivia.plant.data.db.model.response.history.DataDetectionHistoryItem
 import com.olivia.plant.data.db.model.response.notification.DataNotification
 import com.olivia.plant.data.db.model.response.user.DataUser
 import com.olivia.plant.data.network.state.DevResponseBase
@@ -38,4 +40,9 @@ interface ApiEndpoint {
     @GET("notification/history")
     fun notificationHistory(
     ): Single<DevResponseBase<List<DataNotification>>>
+
+    @POST("plant-detection/history/")
+    fun detectionHistory(
+        @Body requestModel: DataParamHistory
+    ): Single<DevResponseBase<List<DataDetectionHistoryItem>>>
 }

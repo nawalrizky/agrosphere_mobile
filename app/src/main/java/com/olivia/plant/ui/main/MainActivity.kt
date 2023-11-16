@@ -7,10 +7,13 @@ import com.olivia.plant.R
 import com.olivia.plant.databinding.ActivityMainBinding
 import com.olivia.plant.ui.home.HomeFragment
 import com.olivia.plant.ui.image_detection.camera.CameraActivity
+import com.olivia.plant.ui.notification.NotificationAdapter
+import com.olivia.plant.ui.notification.NotificationViewModel
 import com.olivia.plant.ui.profile.ProfileFragment
 import com.oratakashi.viewbinding.core.tools.onClick
 import com.oratakashi.viewbinding.core.tools.startActivity
 import com.zero.zerobase.presentation.viewbinding.BaseActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {

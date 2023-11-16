@@ -2,6 +2,7 @@ package com.olivia.plant.di.module
 
 import com.olivia.plant.ui.image_detection.camera.CameraViewModel
 import com.olivia.plant.ui.login.LoginViewModel
+import com.olivia.plant.ui.home.HomeViewModel
 import com.olivia.plant.ui.monitoring.MonitoringViewModel
 import com.olivia.plant.ui.notification.NotificationViewModel
 import com.olivia.plant.ui.register.RegisterViewModel
@@ -14,5 +15,6 @@ val viewModelModule = module {
     viewModel { LoginViewModel(get()) }
     viewModel { RegisterViewModel(get()) }
     viewModel { NotificationViewModel(get()) }
+    viewModel { HomeViewModel(get()) }
     viewModel { MonitoringViewModel(get(named("service_esp"))) }
 }

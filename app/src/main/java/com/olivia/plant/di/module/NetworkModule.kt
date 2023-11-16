@@ -19,7 +19,7 @@ val networkModule = module {
     single { provideOkHttpClient(get()) }
     single { provideRetrofit(get(), BuildConfig.BASE_URL) }
     single { provideApiService(get()) }
-    single(named("esp")) { provideRetrofitEsp(get(), "http://192.168.18.205/") }
+    single(named("esp")) { provideRetrofitEsp(get(), "http://192.168.6.232/") }
     single(named("service_esp")) { provideEspService(get(named("esp"))) }
 }
 
