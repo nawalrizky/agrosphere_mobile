@@ -1,7 +1,9 @@
 package com.olivia.plant.ui.home
 
-import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.olivia.plant.data.db.model.response.history.DataDetectionHistoryItem
 import com.olivia.plant.data.db.session.Sessions
@@ -10,6 +12,7 @@ import com.olivia.plant.databinding.LayoutDataLoadingBinding
 import com.olivia.plant.databinding.LayoutDataNullBinding
 import com.olivia.plant.root.App
 import com.olivia.plant.ui.augmented_reality.AugmentedRealityActivity
+import com.olivia.plant.ui.augmented_reality.ObjectSelectionActivity
 import com.olivia.plant.ui.history.HistoryActivity
 import com.olivia.plant.ui.history.detail.HistoryDetailActivity
 import com.olivia.plant.ui.monitoring.MonitoringActivity
@@ -34,25 +37,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
     }
 
-    @SuppressLint("SetTextI18n")
     override fun initUI() {
         super.initUI()
         with(binding) {
             btnMonitoring.onClick {
                 startActivity(MonitoringActivity::class.java)
             }
-            tvUsername.text = "${App.sessions.getData(Sessions.FIRTSNAME)} ${
-                App.sessions.getData(Sessions.LASTNAME)
-            }"
+            tvUsername.text = "${App.sessions.getData(Sessions.FIRTSNAME)} ${App.sessions.getData(Sessions.LASTNAME)}"
 
             btnNotification.onClick {
                 startActivity(NotificationActivity::class.java)
             }
 
             btnAR.onClick {
-                startActivity(Intent(requireContext(), AugmentedRealityActivity::class.java))
+                startActivityForResult(Intent(requireContext(), ObjectSelectionActivity::class.java), REQUEST_OBJECT_SELECTION)
             }
-
 
             rvHistory.also {
                 it.adapter = adapter
@@ -62,6 +61,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             tvLihatSemua.onClick {
                 startActivity(HistoryActivity::class.java)
             }
+
+
         }
     }
 
@@ -97,5 +98,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 adapter.setEmptyView(LayoutDataNullBinding.inflate(layoutInflater).root)
             }
         )
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_OBJECT_SELECTION && resultCode == AppCompatActivity.RESULT_OK) {
+            val selectedObject = data?.getStringExtra("selectedObject")
+            val intent = Intent(requireContext(), AugmentedRealityActivity::class.java).apply {
+                putExtra("selectedObject", selectedObject)
+            }
+            startActivity(intent)
+        }
+    }
+
+    companion object {
+        private const val REQUEST_OBJECT_SELECTION = 1001
     }
 }

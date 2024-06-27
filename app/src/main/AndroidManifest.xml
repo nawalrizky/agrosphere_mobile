@@ -41,6 +41,8 @@
         </activity>
         <activity android:name=".ui.main.MainActivity" android:exported="true" />
         <activity android:name=".ui.augmented_reality.AugmentedRealityActivity" android:exported="true" />
+        <activity android:name=".ui.augmented_reality.ObjectSelectionActivity" android:exported="true" />
+
 
         <service android:name=".service.notification.NotificationService" android:directBootAware="true" android:exported="false">
             <intent-filter>
