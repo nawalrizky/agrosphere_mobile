@@ -1,7 +1,8 @@
 package com.olivia.plant.ui.history
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.olivia.plant.R
 import com.olivia.plant.data.db.model.response.history.DataDetectionHistoryItem
 import com.olivia.plant.databinding.ActivityHistoryBinding
@@ -13,7 +14,7 @@ import com.olivia.plant.ui.home.HomeViewModel
 import com.oratakashi.viewbinding.core.tools.startActivity
 import com.oratakashi.viewbinding.core.tools.toast
 import com.zero.zerobase.data.viewmodel.observerDynamic
-import com.zero.zerobase.presentation.utils.bind
+
 import com.zero.zerobase.presentation.viewbinding.BaseActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -22,7 +23,7 @@ class HistoryActivity : BaseActivity<ActivityHistoryBinding>() {
     private val viewModel: HomeViewModel by viewModel()
 
     private val adapter: HistoryAdapter by lazy {
-        HistoryAdapter{
+        HistoryAdapter {
             startActivity(HistoryDetailActivity::class.java) { intent ->
                 intent.putExtra("dataLeafsDisease", it)
             }
@@ -31,10 +32,10 @@ class HistoryActivity : BaseActivity<ActivityHistoryBinding>() {
 
     override fun initUI() {
         super.initUI()
-        with(binding){
+        with(binding) {
             btnBack.setOnClickListener { finish() }
-            rvData.bind(adapter)
-
+            rvData.layoutManager = LinearLayoutManager(this@HistoryActivity)
+            rvData.adapter = adapter
 
             srHistory.setOnRefreshListener {
                 viewModel.getHistory(0, -1)
@@ -65,7 +66,7 @@ class HistoryActivity : BaseActivity<ActivityHistoryBinding>() {
                 adapter.setEmptyView(LayoutDataNullBinding.inflate(layoutInflater).root)
             },
             onError = {
-                toast(it.message.toString() )
+                toast(it.message.toString())
                 adapter.setEmptyView(LayoutDataNullBinding.inflate(layoutInflater).root)
             }
         )

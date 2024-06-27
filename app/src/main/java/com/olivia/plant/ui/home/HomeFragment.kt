@@ -1,14 +1,15 @@
 package com.olivia.plant.ui.home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.olivia.plant.data.db.model.response.history.DataDetectionHistoryItem
-import com.olivia.plant.data.db.model.response.notification.DataNotification
 import com.olivia.plant.data.db.session.Sessions
 import com.olivia.plant.databinding.FragmentHomeBinding
 import com.olivia.plant.databinding.LayoutDataLoadingBinding
 import com.olivia.plant.databinding.LayoutDataNullBinding
 import com.olivia.plant.root.App
+import com.olivia.plant.ui.augmented_reality.AugmentedRealityActivity
 import com.olivia.plant.ui.history.HistoryActivity
 import com.olivia.plant.ui.history.detail.HistoryDetailActivity
 import com.olivia.plant.ui.monitoring.MonitoringActivity
@@ -19,7 +20,6 @@ import com.oratakashi.viewbinding.core.tools.startActivity
 import com.oratakashi.viewbinding.core.tools.toast
 import com.zero.zerobase.data.viewmodel.observerDynamic
 import com.zero.zerobase.presentation.viewbinding.BaseFragment
-import dmax.dialog.SpotsDialog
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -27,12 +27,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private val viewModel: HomeViewModel by viewModel()
 
     private val adapter: HistoryAdapter by lazy {
-        HistoryAdapter{
+        HistoryAdapter {
             startActivity(HistoryDetailActivity::class.java) { intent ->
                 intent.putExtra("dataLeafsDisease", it)
             }
         }
     }
+
     @SuppressLint("SetTextI18n")
     override fun initUI() {
         super.initUI()
@@ -47,6 +48,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             btnNotification.onClick {
                 startActivity(NotificationActivity::class.java)
             }
+
+            btnAR.onClick {
+                startActivity(Intent(requireContext(), AugmentedRealityActivity::class.java))
+            }
+
 
             rvHistory.also {
                 it.adapter = adapter
@@ -75,7 +81,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
                 var totalToday = 0
                 it.data?.forEach {
-                    if (it.createdAt.isDateToday()){
+                    if (it.createdAt.isDateToday()) {
                         totalToday++
                     }
                 }
@@ -87,10 +93,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 adapter.setEmptyView(LayoutDataNullBinding.inflate(layoutInflater).root)
             },
             onError = {
-                toast(it.message.toString() )
+                toast(it.message.toString())
                 adapter.setEmptyView(LayoutDataNullBinding.inflate(layoutInflater).root)
             }
         )
     }
-
 }
