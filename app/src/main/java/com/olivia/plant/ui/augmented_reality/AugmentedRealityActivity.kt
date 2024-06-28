@@ -1,12 +1,12 @@
 package com.olivia.plant.ui.augmented_reality
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isGone
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.ar.core.Config
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import io.github.sceneview.ar.ArSceneView
 import io.github.sceneview.ar.node.ArModelNode
 import io.github.sceneview.math.Position
@@ -19,6 +19,7 @@ class AugmentedRealityActivity : AppCompatActivity() {
     private lateinit var placeButton: ExtendedFloatingActionButton
     private lateinit var backButton: ExtendedFloatingActionButton
     private lateinit var modelNode: ArModelNode
+    private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,14 +36,16 @@ class AugmentedRealityActivity : AppCompatActivity() {
 
         backButton = findViewById(R.id.btnBack)
         backButton.setOnClickListener {
-            // Start MainActivity when back button is clicked
             startActivity(Intent(this, MainActivity::class.java))
             finish() // Finish current activity after starting MainActivity
         }
 
+        // Get the selected object from the intent
+        val selectedObject = intent.getStringExtra("selectedObject") ?: "sofa"
+
         modelNode = ArModelNode(sceneView.engine).apply {
             loadModelGlbAsync(
-                glbFileLocation = "models/sofa.glb",
+                glbFileLocation = "models/$selectedObject.glb",
                 scaleToUnits = 1f,
                 centerOrigin = Position(-0.5f)
             ) {
@@ -63,11 +66,11 @@ class AugmentedRealityActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        // Handle any media player or resource cleanup here if needed
+        mediaPlayer.stop()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        // Perform cleanup tasks here as necessary
+        mediaPlayer.release()
     }
 }

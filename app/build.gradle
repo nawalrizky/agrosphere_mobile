@@ -9,7 +9,9 @@ plugins {
 android {
     namespace 'com.olivia.plant'
     compileSdk 34
-
+    viewBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "com.olivia.plant"
         minSdk 24
