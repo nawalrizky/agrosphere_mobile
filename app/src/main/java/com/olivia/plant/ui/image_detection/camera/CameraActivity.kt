@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import android.window.OnBackInvokedDispatcher
 import androidx.activity.OnBackPressedCallback
 import com.olivia.plant.R
@@ -14,6 +15,7 @@ import com.olivia.plant.data.db.model.response.user.DataUser
 import com.olivia.plant.databinding.ActivityCameraBinding
 import com.olivia.plant.root.App
 import com.olivia.plant.ui.image_detection.result.ResultDetectionActivity
+import com.olivia.plant.ui.image_detection.result.ResultNotDetectedActivity
 import com.olivia.plant.ui.main.MainActivity
 import com.olivia.plant.utils.bitmapToBase64
 import com.olivia.plant.utils.bitmapToBase64Async
@@ -159,9 +161,14 @@ class CameraActivity : BaseActivity<ActivityCameraBinding>() {
             },
             onResultAll = {
                 spotsDialogWait.dismiss()
+
                 toast(it.message.toString())
-                startActivity(ResultDetectionActivity::class.java) { intent ->
-                    intent.putExtra("dataDetection", it.data)
+                if (it.data?.dataLeafsDisease.isNullOrEmpty()) {
+                    startActivity(ResultNotDetectedActivity::class.java)
+                } else {
+                    startActivity(ResultDetectionActivity::class.java) { intent ->
+                        intent.putExtra("dataDetection", it.data)
+                    }
                 }
                 finish()
             },
