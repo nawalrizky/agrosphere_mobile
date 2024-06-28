@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
     id 'com.google.gms.google-services'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.5.0'
 }
 
 android {
@@ -51,6 +52,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.7'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
@@ -92,4 +95,13 @@ dependencies {
     implementation 'com.sun.mail:javax.mail:1.6.2'
     // 3D and ARCore
     implementation 'io.github.sceneview:arsceneview:0.10.0'
+
+    // Chart
+    implementation 'io.data2viz.charts:core:1.1.0-eap1'
+    implementation 'io.data2viz.d2v:viz:0.8.12'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0"
+
+
 }

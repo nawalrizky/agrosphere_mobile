@@ -13,6 +13,7 @@ import com.olivia.plant.ui.augmented_reality.AugmentedRealityActivity
 import com.olivia.plant.ui.history.HistoryActivity
 import com.olivia.plant.ui.history.detail.HistoryDetailActivity
 import com.olivia.plant.ui.monitoring.MonitoringActivity
+import com.olivia.plant.ui.monitoring_data.MonitoringData
 import com.olivia.plant.ui.notification.NotificationActivity
 import com.olivia.plant.utils.isDateToday
 import com.oratakashi.viewbinding.core.tools.onClick
@@ -51,6 +52,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
             btnAR.onClick {
                 startActivity(Intent(requireContext(), AugmentedRealityActivity::class.java))
+            }
+
+            btnMonitoringData.onClick {
+                startActivity(Intent(requireContext(), MonitoringData::class.java))
             }
 
 

@@ -1,5 +1,6 @@
 package com.olivia.plant.ui.register
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.olivia.plant.data.db.model.request.register.DataParamRegister
@@ -25,10 +26,10 @@ class RegisterViewModel(
     ) {
         endpoint.register(
             DataParamRegister(
-                username,
                 firstname,
                 lastname,
                 email,
+                username,
                 password
             )
         ).observeDynamic(stateResgister)

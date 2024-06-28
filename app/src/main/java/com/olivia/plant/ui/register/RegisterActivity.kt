@@ -37,46 +37,21 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>() {
                             etUsername,
                             etPassword
                         )
-                    )
+                    ) && !etUsername.text.toString().isNull()
                 ) {
                     toast("Data tidak boleh kosong")
                 } else {
                     viewModel.postRegister(
                         etFirstName.text.toString(),
                         etLastName.text.toString(),
-                        etUsername.text.toString(),
                         etEmail.text.toString(),
+                        etUsername.text.toString(),
                         etPassword.text.toString()
                     )
+                    startActivity(LoginActivity::class.java)
                 }
             }
         }
     }
 
-    override fun initObserver() {
-        super.initObserver()
-        viewModel.stateResgister.observerDynamic<DataUser>(
-            this,
-            onLoading = {
-                spotsDialogWait.show()
-            },
-            onFailed = {
-                spotsDialogWait.dismiss()
-            },
-            onResultAll = {
-                spotsDialogWait.dismiss()
-                if (it.data.isNull()) {
-                    toast("Register Gagal")
-                } else {
-                    toast("Berhasil Register")
-                    startActivity(LoginActivity::class.java)
-                    finish()
-                }
-            },
-            onError = {
-                spotsDialogWait.dismiss()
-                toast(it.message.toString())
-            }
-        )
-    }
 }
