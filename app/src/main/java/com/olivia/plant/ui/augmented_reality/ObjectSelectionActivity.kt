@@ -19,8 +19,8 @@ class ObjectSelectionActivity : AppCompatActivity() {
 
         val objects = listOf(
             ARObject("Sofa", "models/sofa.glb"),
-            ARObject("Chair", "models/chair.glb"),
-            ARObject("Table", "models/table.glb")
+            ARObject("Padi", "models/chair.glb"),
+            ARObject("Tanaman", "models/table.glb")
         )
 
         val adapter = ObjectAdapter(objects) { arObject ->
